@@ -1,0 +1,35 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    function isOwner(uid) {
+      return isAuthenticated() && request.auth.uid == uid;
+    }
+    
+    function isAdmin() {
+      return isAuthenticated() && request.auth.token.admin == true;
+    }
+
+    // Driver Docs
+    match /driver_docs/{uid}/{docType}/{filename} {
+      allow read: if isOwner(uid) || isAdmin();
+      allow write: if isOwner(uid) || isAdmin();
+    }
+
+    // User Photos
+    match /user_photos/{uid}/{filename} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(uid);
+    }
+
+    // Ride Images
+    match /ride_images/{rideId}/{filename} {
+      allow read: if isAuthenticated();
+      allow write: if isAuthenticated(); // Refine to driver of ride later if needed
+    }
+  }
+}

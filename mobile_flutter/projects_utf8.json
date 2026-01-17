@@ -1,0 +1,16 @@
+﻿{
+  "status": "success",
+  "result": [
+    {
+      "projectId": "gotogether-5429a",
+      "projectNumber": "493628718680",
+      "displayName": "GoTogether",
+      "name": "projects/gotogether-5429a",
+      "resources": {
+        "hostingSite": "gotogether-5429a"
+      },
+      "state": "ACTIVE",
+      "etag": "1_cc4da3d7-6460-4710-8ca0-cb90969e3b88"
+    }
+  ]
+}

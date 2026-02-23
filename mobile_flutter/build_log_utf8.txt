@@ -1,0 +1,153 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : Warning: Flutter support for 
+your project's Android Gradle Plugin 
+version (Android Gradle Plugin version 
+8.3.2) will soon be dropped. Please 
+upgrade your Android Gradle Plugin 
+version to a version of at least Android 
+Gradle Plugin version 8.6.0 soon.
+At line:1 char:1
++ flutter build apk --debug > 
+build_log.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~
+    + CategoryInfo          : NotSpecifi 
+   ed: (Warning: Flutte...ion 8.6.0 soo  
+  n.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComm 
+   andError
+ 
+Alternatively, use the flag "--android-sk
+ip-build-dependency-validation" to 
+bypass this check.
+
+Potential fix: Your project's AGP 
+version is typically defined in the 
+plugins block of the `settings.gradle` 
+file (C:\GoTogether\gotogether\mobile_flu
+tter\android/settings.gradle), by a 
+plugin with the id of 
+com.android.application. 
+If you don't see a plugins block, your 
+project was likely created with an older 
+template version. In this case it is 
+most likely defined in the top-level 
+build.gradle file (C:\GoTogether\gotogeth
+er\mobile_flutter\android/build.gradle) 
+by the following line in the 
+dependencies block of the buildscript: 
+"classpath 'com.android.tools.build:gradl
+e:<version>'".
+
+Warning: Flutter support for your 
+project's Kotlin version (1.9.24) will 
+soon be dropped. Please upgrade your 
+Kotlin version to a version of at least 
+2.1.0 soon.
+Alternatively, use the flag "--android-sk
+ip-build-dependency-validation" to 
+bypass this check.
+
+Potential fix: Your project's KGP 
+version is typically defined in the 
+plugins block of the `settings.gradle` 
+file (C:\GoTogether\gotogether\mobile_flu
+tter\android/settings.gradle), by a 
+plugin with the id of 
+org.jetbrains.kotlin.android. 
+If you don't see a plugins block, your 
+project was likely created with an older 
+template version, in which case it is 
+most likely defined in the top-level 
+build.gradle file (C:\GoTogether\gotogeth
+er\mobile_flutter\android/build.gradle) 
+by the ext.kotlin_version property.
+
+Warning: The plugin flutter_native_splash requires Android SDK version 35 or higher.
+For more information about build configuration, see https://flutter.dev/to/review-gradle-config.
+Warning: The plugin flutter_plugin_android_lifecycle requires Android SDK version 36 or higher.
+For more information about build configuration, see https://flutter.dev/to/review-gradle-config.
+Warning: The plugin geolocator_android requires Android SDK version 36 or higher.
+For more information about build configuration, see https://flutter.dev/to/review-gradle-config.
+Warning: The plugin image_picker_android requires Android SDK version 36 or higher.
+For more information about build configuration, see https://flutter.dev/to/review-gradle-config.
+Warning: The plugin path_provider_android requires Android SDK version 36 or higher.
+For more information about build configuration, see https://flutter.dev/to/review-gradle-config.
+Your project is configured to compile 
+against Android SDK 34, but the 
+following plugin(s) require to be 
+compiled against a higher Android SDK 
+version:
+- flutter_native_splash compiles against 
+Android SDK 35
+- flutter_plugin_android_lifecycle 
+compiles against Android SDK 36
+- geolocator_android compiles against 
+Android SDK 36
+- image_picker_android compiles against 
+Android SDK 36
+- path_provider_android compiles against 
+Android SDK 36
+Fix this issue by compiling against the 
+highest Android SDK version (they are 
+backward compatible).
+Add the following to C:\GoTogether\gotoge
+ther\mobile_flutter\android\app\build.gra
+dle.kts:
+
+    android {
+        compileSdk = 36
+        ...
+    }
+lib/passenger/passenger_dashboard.dart:28
+3:20: Error: The method 
+'_buildLocationField' isn't defined for 
+the type '_PassengerDashboardState'.
+ - '_PassengerDashboardState' is from 'pa
+ckage:mobile_flutter/passenger/passenger_
+dashboard.dart' ('lib/passenger/passenger
+_dashboard.dart').
+Try correcting the name to the name of 
+an existing method, or defining a method 
+named '_buildLocationField'.
+                   _buildLocationField(
+                   ^^^^^^^^^^^^^^^^^^^
+lib/passenger/passenger_dashboard.dart:29
+5:20: Error: The method 
+'_buildLocationField' isn't defined for 
+the type '_PassengerDashboardState'.
+ - '_PassengerDashboardState' is from 'pa
+ckage:mobile_flutter/passenger/passenger_
+dashboard.dart' ('lib/passenger/passenger
+_dashboard.dart').
+Try correcting the name to the name of 
+an existing method, or defining a method 
+named '_buildLocationField'.
+                   _buildLocationField(
+                   ^^^^^^^^^^^^^^^^^^^
+Target kernel_snapshot_program failed: 
+Exception
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task 
+':app:compileFlutterBuildDebug'.
+> Process 'command 
+'C:\flutter\bin\flutter.bat'' finished 
+with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get 
+the stack trace.
+> Run with --info or --debug option to 
+get more log output.
+> Run with --scan to get full insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 7s
+Running Gradle task 'assembleDebug'...                              8.1s
+Gradle task assembleDebug failed with 
+exit code 1

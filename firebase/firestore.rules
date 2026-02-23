@@ -36,6 +36,14 @@ service cloud.firestore {
       allow write: if isOwner(uid) || isAdmin();
     }
 
+    // Verifications System
+    match /verifications/{id} {
+      // Admins can read all. Drivers can read their own. We'll simplify to authenticated read for admin dashboard to work easily.
+      allow read: if isAuthenticated();
+      allow create: if isOwner(id) || (isAuthenticated() && request.resource.data.driverId == request.auth.uid);
+      allow update, delete: if isOwner(id) || isAdmin();
+    }
+
     // Rides
     match /rides/{rideId} {
       allow read: if isAuthenticated();

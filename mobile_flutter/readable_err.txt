@@ -1,0 +1,451 @@
+> Task :gradle:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :gradle:pluginDescriptors UP-TO-DATE
+> Task :gradle:processResources
+
+> Task :gradle:compileKotlin
+w: file:///C:/flutter/packages/flutter_tools/gradle/src/main/kotlin/FlutterPlugin.kt:11:37 'ApkVariant' is deprecated. Deprecated in Java
+w: file:///C:/flutter/packages/flutter_tools/gradle/src/main/kotlin/FlutterPlugin.kt:609:69 'ApkVariant' is deprecated. Deprecated in Java
+w: file:///C:/flutter/packages/flutter_tools/gradle/src/main/kotlin/plugins/PluginHandler.kt:186:64 Unchecked cast: NamedDomainObjectContainer<out BuildType> to NamedDomainObjectContainer<BuildType>
+w: file:///C:/flutter/packages/flutter_tools/gradle/src/main/kotlin/plugins/PluginHandler.kt:187:69 Unchecked cast: NamedDomainObjectContainer<out BuildType> to NamedDomainObjectContainer<BuildType>
+
+> Task :gradle:compileJava NO-SOURCE
+> Task :gradle:compileGroovy NO-SOURCE
+> Task :gradle:classes
+> Task :gradle:jar
+> Task :app:DebugMinSdkCheck
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:compileFlutterBuildDebug
+> Task :app:packJniLibsflutterBuildDebug
+> Task :cloud_firestore:preBuild UP-TO-DATE
+> Task :cloud_firestore:preDebugBuild UP-TO-DATE
+> Task :cloud_firestore:writeDebugAarMetadata UP-TO-DATE
+> Task :cloud_functions:preBuild UP-TO-DATE
+> Task :cloud_functions:preDebugBuild UP-TO-DATE
+> Task :cloud_functions:writeDebugAarMetadata UP-TO-DATE
+> Task :firebase_auth:preBuild UP-TO-DATE
+> Task :firebase_auth:preDebugBuild UP-TO-DATE
+> Task :firebase_auth:writeDebugAarMetadata UP-TO-DATE
+> Task :firebase_core:preBuild UP-TO-DATE
+> Task :firebase_core:preDebugBuild UP-TO-DATE
+> Task :firebase_core:writeDebugAarMetadata UP-TO-DATE
+> Task :firebase_messaging:preBuild UP-TO-DATE
+> Task :firebase_messaging:preDebugBuild UP-TO-DATE
+> Task :firebase_messaging:writeDebugAarMetadata UP-TO-DATE
+> Task :firebase_storage:preBuild UP-TO-DATE
+> Task :firebase_storage:preDebugBuild UP-TO-DATE
+> Task :firebase_storage:writeDebugAarMetadata UP-TO-DATE
+> Task :flutter_keyboard_visibility:preBuild UP-TO-DATE
+> Task :flutter_keyboard_visibility:preDebugBuild UP-TO-DATE
+> Task :flutter_keyboard_visibility:writeDebugAarMetadata UP-TO-DATE
+> Task :flutter_native_splash:preBuild UP-TO-DATE
+> Task :flutter_native_splash:preDebugBuild UP-TO-DATE
+> Task :flutter_native_splash:writeDebugAarMetadata UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:preBuild UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:preDebugBuild UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:writeDebugAarMetadata UP-TO-DATE
+> Task :fluttertoast:preBuild UP-TO-DATE
+> Task :fluttertoast:preDebugBuild UP-TO-DATE
+> Task :fluttertoast:writeDebugAarMetadata UP-TO-DATE
+> Task :geolocator_android:preBuild UP-TO-DATE
+> Task :geolocator_android:preDebugBuild UP-TO-DATE
+> Task :geolocator_android:writeDebugAarMetadata UP-TO-DATE
+> Task :image_picker_android:preBuild UP-TO-DATE
+> Task :image_picker_android:preDebugBuild UP-TO-DATE
+> Task :image_picker_android:writeDebugAarMetadata UP-TO-DATE
+> Task :package_info_plus:preBuild UP-TO-DATE
+> Task :package_info_plus:preDebugBuild UP-TO-DATE
+> Task :package_info_plus:writeDebugAarMetadata UP-TO-DATE
+> Task :path_provider_android:preBuild UP-TO-DATE
+> Task :path_provider_android:preDebugBuild UP-TO-DATE
+> Task :path_provider_android:writeDebugAarMetadata UP-TO-DATE
+> Task :permission_handler_android:preBuild UP-TO-DATE
+> Task :permission_handler_android:preDebugBuild UP-TO-DATE
+> Task :permission_handler_android:writeDebugAarMetadata UP-TO-DATE
+> Task :razorpay_flutter:preBuild UP-TO-DATE
+> Task :razorpay_flutter:preDebugBuild UP-TO-DATE
+> Task :razorpay_flutter:writeDebugAarMetadata UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :cloud_firestore:processDebugNavigationResources UP-TO-DATE
+> Task :cloud_functions:processDebugNavigationResources UP-TO-DATE
+> Task :firebase_auth:processDebugNavigationResources UP-TO-DATE
+> Task :firebase_core:processDebugNavigationResources UP-TO-DATE
+> Task :firebase_messaging:processDebugNavigationResources UP-TO-DATE
+> Task :firebase_storage:processDebugNavigationResources UP-TO-DATE
+> Task :flutter_keyboard_visibility:processDebugNavigationResources UP-TO-DATE
+> Task :flutter_native_splash:processDebugNavigationResources UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:processDebugNavigationResources UP-TO-DATE
+> Task :fluttertoast:processDebugNavigationResources UP-TO-DATE
+> Task :geolocator_android:processDebugNavigationResources UP-TO-DATE
+> Task :image_picker_android:processDebugNavigationResources UP-TO-DATE
+> Task :package_info_plus:processDebugNavigationResources UP-TO-DATE
+> Task :path_provider_android:processDebugNavigationResources UP-TO-DATE
+> Task :permission_handler_android:processDebugNavigationResources UP-TO-DATE
+> Task :razorpay_flutter:processDebugNavigationResources UP-TO-DATE
+> Task :app:processDebugNavigationResources UP-TO-DATE
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+> Task :app:cleanMergeDebugAssets
+> Task :app:mergeDebugShaders UP-TO-DATE
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :cloud_firestore:mergeDebugShaders UP-TO-DATE
+> Task :cloud_firestore:compileDebugShaders NO-SOURCE
+> Task :cloud_firestore:generateDebugAssets UP-TO-DATE
+> Task :cloud_firestore:mergeDebugAssets UP-TO-DATE
+> Task :cloud_functions:mergeDebugShaders UP-TO-DATE
+> Task :cloud_functions:compileDebugShaders NO-SOURCE
+> Task :cloud_functions:generateDebugAssets UP-TO-DATE
+> Task :cloud_functions:mergeDebugAssets UP-TO-DATE
+> Task :firebase_auth:mergeDebugShaders UP-TO-DATE
+> Task :firebase_auth:compileDebugShaders NO-SOURCE
+> Task :firebase_auth:generateDebugAssets UP-TO-DATE
+> Task :firebase_auth:mergeDebugAssets UP-TO-DATE
+> Task :firebase_core:mergeDebugShaders UP-TO-DATE
+> Task :firebase_core:compileDebugShaders NO-SOURCE
+> Task :firebase_core:generateDebugAssets UP-TO-DATE
+> Task :firebase_core:mergeDebugAssets UP-TO-DATE
+> Task :firebase_messaging:mergeDebugShaders UP-TO-DATE
+> Task :firebase_messaging:compileDebugShaders NO-SOURCE
+> Task :firebase_messaging:generateDebugAssets UP-TO-DATE
+> Task :firebase_messaging:mergeDebugAssets UP-TO-DATE
+> Task :firebase_storage:mergeDebugShaders UP-TO-DATE
+> Task :firebase_storage:compileDebugShaders NO-SOURCE
+> Task :firebase_storage:generateDebugAssets UP-TO-DATE
+> Task :firebase_storage:mergeDebugAssets UP-TO-DATE
+> Task :flutter_keyboard_visibility:mergeDebugShaders UP-TO-DATE
+> Task :flutter_keyboard_visibility:compileDebugShaders NO-SOURCE
+> Task :flutter_keyboard_visibility:generateDebugAssets UP-TO-DATE
+> Task :flutter_keyboard_visibility:mergeDebugAssets UP-TO-DATE
+> Task :flutter_native_splash:mergeDebugShaders UP-TO-DATE
+> Task :flutter_native_splash:compileDebugShaders NO-SOURCE
+> Task :flutter_native_splash:generateDebugAssets UP-TO-DATE
+> Task :flutter_native_splash:mergeDebugAssets UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:mergeDebugShaders UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:compileDebugShaders NO-SOURCE
+> Task :flutter_plugin_android_lifecycle:generateDebugAssets UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:mergeDebugAssets UP-TO-DATE
+> Task :fluttertoast:mergeDebugShaders UP-TO-DATE
+> Task :fluttertoast:compileDebugShaders NO-SOURCE
+> Task :fluttertoast:generateDebugAssets UP-TO-DATE
+> Task :fluttertoast:mergeDebugAssets UP-TO-DATE
+> Task :geolocator_android:mergeDebugShaders UP-TO-DATE
+> Task :geolocator_android:compileDebugShaders NO-SOURCE
+> Task :geolocator_android:generateDebugAssets UP-TO-DATE
+> Task :geolocator_android:mergeDebugAssets UP-TO-DATE
+> Task :image_picker_android:mergeDebugShaders UP-TO-DATE
+> Task :image_picker_android:compileDebugShaders NO-SOURCE
+> Task :image_picker_android:generateDebugAssets UP-TO-DATE
+> Task :image_picker_android:mergeDebugAssets UP-TO-DATE
+> Task :package_info_plus:mergeDebugShaders UP-TO-DATE
+> Task :package_info_plus:compileDebugShaders NO-SOURCE
+> Task :package_info_plus:generateDebugAssets UP-TO-DATE
+> Task :package_info_plus:mergeDebugAssets UP-TO-DATE
+> Task :path_provider_android:mergeDebugShaders UP-TO-DATE
+> Task :path_provider_android:compileDebugShaders NO-SOURCE
+> Task :path_provider_android:generateDebugAssets UP-TO-DATE
+> Task :path_provider_android:mergeDebugAssets UP-TO-DATE
+> Task :permission_handler_android:mergeDebugShaders UP-TO-DATE
+> Task :permission_handler_android:compileDebugShaders NO-SOURCE
+> Task :permission_handler_android:generateDebugAssets UP-TO-DATE
+> Task :permission_handler_android:mergeDebugAssets UP-TO-DATE
+> Task :razorpay_flutter:mergeDebugShaders UP-TO-DATE
+> Task :razorpay_flutter:compileDebugShaders NO-SOURCE
+> Task :razorpay_flutter:generateDebugAssets UP-TO-DATE
+> Task :razorpay_flutter:mergeDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:copyFlutterAssetsDebug
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:processDebugGoogleServices UP-TO-DATE
+> Task :cloud_firestore:generateDebugResValues UP-TO-DATE
+> Task :cloud_firestore:generateDebugResources UP-TO-DATE
+> Task :cloud_firestore:packageDebugResources UP-TO-DATE
+> Task :cloud_functions:generateDebugResValues UP-TO-DATE
+> Task :cloud_functions:generateDebugResources UP-TO-DATE
+> Task :cloud_functions:packageDebugResources UP-TO-DATE
+> Task :firebase_auth:generateDebugResValues UP-TO-DATE
+> Task :firebase_auth:generateDebugResources UP-TO-DATE
+> Task :firebase_auth:packageDebugResources UP-TO-DATE
+> Task :firebase_core:generateDebugResValues UP-TO-DATE
+> Task :firebase_core:generateDebugResources UP-TO-DATE
+> Task :firebase_core:packageDebugResources UP-TO-DATE
+> Task :firebase_messaging:generateDebugResValues UP-TO-DATE
+> Task :firebase_messaging:generateDebugResources UP-TO-DATE
+> Task :firebase_messaging:packageDebugResources UP-TO-DATE
+> Task :firebase_storage:generateDebugResValues UP-TO-DATE
+> Task :firebase_storage:generateDebugResources UP-TO-DATE
+> Task :firebase_storage:packageDebugResources UP-TO-DATE
+> Task :flutter_keyboard_visibility:generateDebugResValues UP-TO-DATE
+> Task :flutter_keyboard_visibility:generateDebugResources UP-TO-DATE
+> Task :flutter_keyboard_visibility:packageDebugResources UP-TO-DATE
+> Task :flutter_native_splash:generateDebugResValues UP-TO-DATE
+> Task :flutter_native_splash:generateDebugResources UP-TO-DATE
+> Task :flutter_native_splash:packageDebugResources UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:generateDebugResValues UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:generateDebugResources UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:packageDebugResources UP-TO-DATE
+> Task :fluttertoast:generateDebugResValues UP-TO-DATE
+> Task :fluttertoast:generateDebugResources UP-TO-DATE
+> Task :fluttertoast:packageDebugResources UP-TO-DATE
+> Task :geolocator_android:generateDebugResValues UP-TO-DATE
+> Task :geolocator_android:generateDebugResources UP-TO-DATE
+> Task :geolocator_android:packageDebugResources UP-TO-DATE
+> Task :image_picker_android:generateDebugResValues UP-TO-DATE
+> Task :image_picker_android:generateDebugResources UP-TO-DATE
+> Task :image_picker_android:packageDebugResources UP-TO-DATE
+> Task :package_info_plus:generateDebugResValues UP-TO-DATE
+> Task :package_info_plus:generateDebugResources UP-TO-DATE
+> Task :package_info_plus:packageDebugResources UP-TO-DATE
+> Task :path_provider_android:generateDebugResValues UP-TO-DATE
+> Task :path_provider_android:generateDebugResources UP-TO-DATE
+> Task :path_provider_android:packageDebugResources UP-TO-DATE
+> Task :permission_handler_android:generateDebugResValues UP-TO-DATE
+> Task :permission_handler_android:generateDebugResources UP-TO-DATE
+> Task :permission_handler_android:packageDebugResources UP-TO-DATE
+> Task :razorpay_flutter:generateDebugResValues UP-TO-DATE
+> Task :razorpay_flutter:generateDebugResources UP-TO-DATE
+> Task :razorpay_flutter:packageDebugResources UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :cloud_firestore:extractDeepLinksDebug UP-TO-DATE
+> Task :cloud_firestore:processDebugManifest UP-TO-DATE
+> Task :cloud_functions:extractDeepLinksDebug UP-TO-DATE
+> Task :cloud_functions:processDebugManifest UP-TO-DATE
+> Task :firebase_auth:extractDeepLinksDebug UP-TO-DATE
+> Task :firebase_auth:processDebugManifest UP-TO-DATE
+> Task :firebase_core:extractDeepLinksDebug UP-TO-DATE
+> Task :firebase_core:processDebugManifest UP-TO-DATE
+> Task :firebase_messaging:extractDeepLinksDebug UP-TO-DATE
+> Task :firebase_messaging:processDebugManifest UP-TO-DATE
+> Task :firebase_storage:extractDeepLinksDebug UP-TO-DATE
+> Task :firebase_storage:processDebugManifest UP-TO-DATE
+> Task :flutter_keyboard_visibility:extractDeepLinksDebug UP-TO-DATE
+> Task :flutter_keyboard_visibility:processDebugManifest UP-TO-DATE
+> Task :flutter_native_splash:extractDeepLinksDebug UP-TO-DATE
+> Task :flutter_native_splash:processDebugManifest UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:extractDeepLinksDebug UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:processDebugManifest UP-TO-DATE
+> Task :fluttertoast:extractDeepLinksDebug UP-TO-DATE
+> Task :fluttertoast:processDebugManifest UP-TO-DATE
+> Task :geolocator_android:extractDeepLinksDebug UP-TO-DATE
+> Task :geolocator_android:processDebugManifest UP-TO-DATE
+> Task :image_picker_android:extractDeepLinksDebug UP-TO-DATE
+> Task :image_picker_android:processDebugManifest UP-TO-DATE
+> Task :package_info_plus:extractDeepLinksDebug UP-TO-DATE
+> Task :package_info_plus:processDebugManifest UP-TO-DATE
+> Task :path_provider_android:extractDeepLinksDebug UP-TO-DATE
+> Task :path_provider_android:processDebugManifest UP-TO-DATE
+> Task :permission_handler_android:extractDeepLinksDebug UP-TO-DATE
+> Task :permission_handler_android:processDebugManifest UP-TO-DATE
+> Task :razorpay_flutter:extractDeepLinksDebug UP-TO-DATE
+> Task :razorpay_flutter:processDebugManifest UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:outputDebugAppLinkSettings UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :cloud_firestore:compileDebugLibraryResources UP-TO-DATE
+> Task :cloud_firestore:parseDebugLocalResources UP-TO-DATE
+> Task :cloud_firestore:generateDebugRFile UP-TO-DATE
+> Task :cloud_functions:compileDebugLibraryResources UP-TO-DATE
+> Task :cloud_functions:parseDebugLocalResources UP-TO-DATE
+> Task :cloud_functions:generateDebugRFile UP-TO-DATE
+> Task :firebase_auth:compileDebugLibraryResources UP-TO-DATE
+> Task :firebase_auth:parseDebugLocalResources UP-TO-DATE
+> Task :firebase_auth:generateDebugRFile UP-TO-DATE
+> Task :firebase_core:compileDebugLibraryResources UP-TO-DATE
+> Task :firebase_core:parseDebugLocalResources UP-TO-DATE
+> Task :firebase_core:generateDebugRFile UP-TO-DATE
+> Task :firebase_messaging:compileDebugLibraryResources UP-TO-DATE
+> Task :firebase_messaging:parseDebugLocalResources UP-TO-DATE
+> Task :firebase_messaging:generateDebugRFile UP-TO-DATE
+> Task :firebase_storage:compileDebugLibraryResources UP-TO-DATE
+> Task :firebase_storage:parseDebugLocalResources UP-TO-DATE
+> Task :firebase_storage:generateDebugRFile UP-TO-DATE
+> Task :flutter_keyboard_visibility:compileDebugLibraryResources UP-TO-DATE
+> Task :flutter_keyboard_visibility:parseDebugLocalResources UP-TO-DATE
+> Task :flutter_keyboard_visibility:generateDebugRFile UP-TO-DATE
+> Task :flutter_native_splash:compileDebugLibraryResources UP-TO-DATE
+> Task :flutter_native_splash:parseDebugLocalResources UP-TO-DATE
+> Task :flutter_native_splash:generateDebugRFile UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:compileDebugLibraryResources UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:parseDebugLocalResources UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:generateDebugRFile UP-TO-DATE
+> Task :fluttertoast:compileDebugLibraryResources UP-TO-DATE
+> Task :fluttertoast:parseDebugLocalResources UP-TO-DATE
+> Task :fluttertoast:generateDebugRFile UP-TO-DATE
+> Task :geolocator_android:compileDebugLibraryResources UP-TO-DATE
+> Task :geolocator_android:parseDebugLocalResources UP-TO-DATE
+> Task :geolocator_android:generateDebugRFile UP-TO-DATE
+> Task :image_picker_android:compileDebugLibraryResources UP-TO-DATE
+> Task :image_picker_android:parseDebugLocalResources UP-TO-DATE
+> Task :image_picker_android:generateDebugRFile UP-TO-DATE
+> Task :package_info_plus:compileDebugLibraryResources UP-TO-DATE
+> Task :package_info_plus:parseDebugLocalResources UP-TO-DATE
+> Task :package_info_plus:generateDebugRFile UP-TO-DATE
+> Task :path_provider_android:compileDebugLibraryResources UP-TO-DATE
+> Task :path_provider_android:parseDebugLocalResources UP-TO-DATE
+> Task :path_provider_android:generateDebugRFile UP-TO-DATE
+> Task :permission_handler_android:compileDebugLibraryResources UP-TO-DATE
+> Task :permission_handler_android:parseDebugLocalResources UP-TO-DATE
+> Task :permission_handler_android:generateDebugRFile UP-TO-DATE
+> Task :razorpay_flutter:compileDebugLibraryResources UP-TO-DATE
+> Task :razorpay_flutter:parseDebugLocalResources UP-TO-DATE
+> Task :razorpay_flutter:generateDebugRFile UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :cloud_firestore:generateDebugBuildConfig UP-TO-DATE
+> Task :cloud_firestore:javaPreCompileDebug UP-TO-DATE
+> Task :firebase_core:generateDebugBuildConfig UP-TO-DATE
+> Task :firebase_core:javaPreCompileDebug UP-TO-DATE
+> Task :firebase_core:compileDebugJavaWithJavac
+> Task :cloud_functions:generateDebugBuildConfig UP-TO-DATE
+> Task :cloud_functions:javaPreCompileDebug UP-TO-DATE
+> Task :firebase_auth:generateDebugBuildConfig UP-TO-DATE
+> Task :firebase_auth:javaPreCompileDebug UP-TO-DATE
+> Task :firebase_messaging:generateDebugBuildConfig UP-TO-DATE
+> Task :firebase_messaging:javaPreCompileDebug UP-TO-DATE
+> Task :firebase_storage:generateDebugBuildConfig UP-TO-DATE
+> Task :firebase_storage:javaPreCompileDebug UP-TO-DATE
+> Task :flutter_keyboard_visibility:javaPreCompileDebug UP-TO-DATE
+> Task :firebase_core:bundleLibCompileToJarDebug
+> Task :flutter_keyboard_visibility:compileDebugJavaWithJavac
+> Task :cloud_firestore:compileDebugJavaWithJavac
+> Task :cloud_firestore:bundleLibCompileToJarDebug
+> Task :cloud_functions:compileDebugJavaWithJavac
+> Task :cloud_functions:bundleLibCompileToJarDebug
+
+> Task :firebase_auth:compileDebugJavaWithJavac
+.\gradlew : Note: Some 
+input files use or 
+override a deprecated 
+API.
+At line:1 char:13
++ cd android; 
+.\gradlew 
+assembleDebug > 
+..\gradle_err_3.txt 
+2>&1
++             ~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (Note: Some in   
+ pu...deprecated AP    
+I.:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+Note: Recompile with 
+-Xlint:deprecation for 
+details.
+
+> Task :firebase_auth:bundleLibCompileToJarDebug
+> Task :firebase_messaging:compileDebugJavaWithJavac
+> Task :firebase_messaging:bundleLibCompileToJarDebug
+> Task :firebase_storage:compileDebugJavaWithJavac
+> Task :flutter_keyboard_visibility:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :flutter_native_splash:javaPreCompileDebug UP-TO-DATE
+> Task :firebase_storage:bundleLibCompileToJarDebug
+> Task :flutter_native_splash:compileDebugJavaWithJavac
+> Task :flutter_native_splash:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:javaPreCompileDebug UP-TO-DATE
+> Task :flutter_plugin_android_lifecycle:compileDebugJavaWithJavac
+> Task :flutter_plugin_android_lifecycle:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :fluttertoast:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :fluttertoast:javaPreCompileDebug UP-TO-DATE
+> Task :geolocator_android:javaPreCompileDebug UP-TO-DATE
+> Task :geolocator_android:compileDebugJavaWithJavac
+> Task :image_picker_android:javaPreCompileDebug UP-TO-DATE
+> Task :geolocator_android:bundleLibCompileToJarDebug
+
+> Task :fluttertoast:compileDebugKotlin FAILED
+e: file:///C:/Users/Pra
+jwal/AppData/Local/Pub/
+Cache/hosted/pub.dev/fl
+uttertoast-8.2.8/androi
+d/src/main/kotlin/io/gi
+thub/ponnamkarthik/toas
+t/fluttertoast/FlutterT
+oastPlugin.kt:9:48 
+Unresolved reference 
+'Registrar'.
+e: file:///C:/Users/Pra
+jwal/AppData/Local/Pub/
+Cache/hosted/pub.dev/fl
+uttertoast-8.2.8/androi
+d/src/main/kotlin/io/gi
+thub/ponnamkarthik/toas
+t/fluttertoast/MethodCa
+llHandlerImpl.kt:18:24 
+Unresolved reference 
+'FlutterMain'.
+e: file:///C:/Users/Pra
+jwal/AppData/Local/Pub/
+Cache/hosted/pub.dev/fl
+uttertoast-8.2.8/androi
+d/src/main/kotlin/io/gi
+thub/ponnamkarthik/toas
+t/fluttertoast/MethodCa
+llHandlerImpl.kt:74:35 
+Unresolved reference 
+'FlutterMain'.
+e: file:///C:/Users/Pra
+jwal/AppData/Local/Pub/
+Cache/hosted/pub.dev/fl
+uttertoast-8.2.8/androi
+d/src/main/kotlin/io/gi
+thub/ponnamkarthik/toas
+t/fluttertoast/MethodCa
+llHandlerImpl.kt:90:39 
+Unresolved reference 
+'FlutterMain'.
+
+> Task :image_picker_android:compileDebugJavaWithJavac
+
+
+[Incubating] Problems report is available at: file:///D:/GoTogether/gotogether/mobile_flutter/build/reports/problems/problems-report.html
+FAILURE: Build failed 
+with an exception.
+
+* What went wrong:
+Execution failed for 
+task ':fluttertoast:com
+pileDebugKotlin'.
+> A failure occurred 
+while executing org.jet
+brains.kotlin.compilerR
+unner.GradleCompilerRun
+nerWithWorkers$GradleKo
+tlinCompilerWorkAction
+   > Compilation 
+error. See log for 
+more details
+
+* Try:
+> Run with 
+--stacktrace option to 
+get the stack trace.
+> Run with --info or 
+--debug option to get 
+more log output.
+> Run with --scan to 
+get full insights.
+> Get more help at http
+s://help.gradle.org.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.14/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD FAILED in 34s
+260 actionable tasks: 28 executed, 232 up-to-date

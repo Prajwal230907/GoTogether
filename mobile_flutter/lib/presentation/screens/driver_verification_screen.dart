@@ -20,7 +20,6 @@ class _DriverVerificationScreenState extends ConsumerState<DriverVerificationScr
   final _vehicleModelController = TextEditingController();
   final _vehiclePlateController = TextEditingController();
   
-  File? _collegeIdImage;
   File? _licenseImage;
   File? _rcImage;
   File? _vehicleImage;
@@ -38,65 +37,125 @@ class _DriverVerificationScreenState extends ConsumerState<DriverVerificationScr
     }
   }
 
-  Future<String?> _uploadFile(File file, String path) async {
+  Future<String?> _uploadFile(File file, String fileName, String uid) async {
     try {
-      final ref = FirebaseStorage.instance.ref().child(path);
-      await ref.putFile(file);
-      return await ref.getDownloadURL();
+      final imagePath = file.path;
+      print('Debug: imagePath is $imagePath');
+      
+      if (imagePath.isEmpty) {
+         throw Exception("imagePath is empty");
+      }
+      if (!await File(imagePath).exists()) {
+         throw Exception("File does not exist before upload");
+      }
+
+      final storageRef = FirebaseStorage.instance
+          .ref()
+          .child('drivers/$uid/documents/$fileName.jpg');
+
+      // Use putFile which is safer for larger files
+      final uploadTask = storageRef.putFile(File(imagePath));
+      final snapshot = await uploadTask;
+      
+      if (snapshot.state != TaskState.success) {
+        throw Exception("Upload failed with state: ${snapshot.state}");
+      }
+      
+      final downloadUrl = await snapshot.ref.getDownloadURL();
+      return downloadUrl;
+      
+    } on FirebaseException catch (e) {
+      print("Firebase Storage Error: ${e.code}");
+      print("Message: ${e.message}");
+      rethrow;
     } catch (e) {
       print('Error uploading file: $e');
-      return null;
+      rethrow;
     }
   }
 
   Future<void> _submitVerification() async {
-    // BYPASS: Validation skipped for testing
-    // if (!_formKey.currentState!.validate()) return;
-    // if (_collegeIdImage == null || _licenseImage == null || _rcImage == null || _vehicleImage == null || _driverPhotoImage == null) {
-    //   ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please upload all required documents.')));
-    //   return;
-    // }
+    if (!_formKey.currentState!.validate()) return;
+    if (_licenseImage == null || _rcImage == null || _vehicleImage == null || _driverPhotoImage == null) {
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Please upload all required documents.')));
+      return;
+    }
 
     setState(() => _isUploading = true);
 
     try {
       final user = FirebaseAuth.instance.currentUser;
-      if (user == null) return;
+      if (user == null) throw Exception("User not logged in.");
+      
+      final uid = user.uid;
 
-      // BYPASS: Image upload skipped for testing
-      /*
-      final collegeIdUrl = await _uploadFile(_collegeIdImage!, 'drivers/${user.uid}/college_id.jpg');
-      final licenseUrl = await _uploadFile(_licenseImage!, 'drivers/${user.uid}/license.jpg');
-      final rcUrl = await _uploadFile(_rcImage!, 'drivers/${user.uid}/rc.jpg');
-      final vehicleUrl = await _uploadFile(_vehicleImage!, 'drivers/${user.uid}/vehicle.jpg');
-      final driverPhotoUrl = await _uploadFile(_driverPhotoImage!, 'drivers/${user.uid}/driver_photo.jpg');
+      // Fetch user data for the verification record
+      final userDoc = await FirebaseFirestore.instance.collection('users').doc(uid).get();
+      final userData = userDoc.data() ?? {};
+      final String driverName = userData['name'] ?? 'Unknown';
+      final String driverCollege = userData['college'] ?? 'Unknown';
+      final String existingCollegeIdUrl = userData['documents']?['collegeId'] ?? '';
 
-      if (collegeIdUrl == null || licenseUrl == null || rcUrl == null || vehicleUrl == null || driverPhotoUrl == null) {
+      final licenseUrl = await _uploadFile(_licenseImage!, 'license', uid);
+      final rcUrl = await _uploadFile(_rcImage!, 'rc', uid);
+      final selfieUrl = await _uploadFile(_driverPhotoImage!, 'selfie', uid);
+      // Optional: vehicleUrl not strictly in the user's final list, but the screen has it. Let's upload it anyway.
+      final vehicleUrl = await _uploadFile(_vehicleImage!, 'vehicle', uid);
+
+      if (licenseUrl == null || rcUrl == null || selfieUrl == null || vehicleUrl == null) {
         throw Exception('Failed to upload one or more images.');
       }
-      */
 
-      // BYPASS: Using dummy URLs
-      const dummyUrl = 'https://via.placeholder.com/150';
+      final vModel = _vehicleModelController.text.trim();
+      final vPlate = _vehiclePlateController.text.trim();
 
-      await FirebaseFirestore.instance.collection('users').doc(user.uid).update({
-        'driverVerificationStatus': 'verified', // BYPASS: Auto-verified
-        'vehicleModel': _vehicleModelController.text.trim().isEmpty ? 'Test Vehicle' : _vehicleModelController.text.trim(),
-        'vehiclePlate': _vehiclePlateController.text.trim().isEmpty ? 'TEST-1234' : _vehiclePlateController.text.trim(),
-        'documents': {
-          'collegeId': dummyUrl,
-          'license': dummyUrl,
-          'rc': dummyUrl,
-          'vehicle': dummyUrl,
-          'driverPhoto': dummyUrl,
-        },
+      // Write to verifications collection for Admin
+      await FirebaseFirestore.instance.collection('verifications').doc(uid).set({
+        'driverId': uid,
+        'name': driverName,
+        'college': driverCollege,
+        'vehicleModel': vModel,
+        'plateNumber': vPlate,
+        'collegeIdUrl': existingCollegeIdUrl, // Sourced from registration if available
+        'licenseUrl': licenseUrl,
+        'rcUrl': rcUrl,
+        'selfieUrl': selfieUrl,
+        'status': 'pending',
         'submittedAt': FieldValue.serverTimestamp(),
-        'verifiedAt': FieldValue.serverTimestamp(), // Added verifiedAt
+        'verifiedAt': null,
+        'adminRemarks': '',
+      });
+
+      await FirebaseFirestore.instance.collection('drivers').doc(uid).set({
+        'licenseUrl': licenseUrl,
+        'rcUrl': rcUrl,
+        'selfieUrl': selfieUrl,
+        'vehicleUrl': vehicleUrl,
+        'verificationStatus': "pending",
+        'vehicleModel': vModel,
+        'vehiclePlate': vPlate,
+      }, SetOptions(merge: true));
+
+      await FirebaseFirestore.instance.collection('users').doc(uid).update({
+        'driverVerificationStatus': 'pending', 
+        'isVerified': false, // Add this explicit flag for ride creation
+        'documents': {
+          'license': licenseUrl,
+          'rc': rcUrl,
+          'driverPhoto': selfieUrl,
+          'vehicle': vehicleUrl,
+        },
       });
 
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Bypass: Driver Auto-Verified!')));
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Verification Submitted Successfully!')));
         context.go('/driver_home'); 
+      }
+    } on FirebaseException catch (e) {
+      print("Firebase Storage Error: ${e.code}");
+      print("Message: ${e.message}");
+      if (mounted) {
+         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Firebase Error: ${e.message ?? e.code}')));
       }
     } catch (e) {
       if (mounted) {
@@ -222,7 +281,6 @@ class _DriverVerificationScreenState extends ConsumerState<DriverVerificationScr
                               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor),
                             ),
                             const SizedBox(height: 16),
-                            _buildImagePicker('College ID', _collegeIdImage, (f) => _collegeIdImage = f),
                             _buildImagePicker('Driving License', _licenseImage, (f) => _licenseImage = f),
                             _buildImagePicker('Vehicle RC', _rcImage, (f) => _rcImage = f),
                             _buildImagePicker('Vehicle Photo', _vehicleImage, (f) => _vehicleImage = f),

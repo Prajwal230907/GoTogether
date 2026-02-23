@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GoTogether - Login &amp; Signup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2e7eff",
+                        "electric-purple": "#a855f7",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0f1723",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --accent-gradient: linear-gradient(135deg, #2e7eff 0%, #00d2ff 100%);
+            --driver-gradient: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .soft-glow {
+            box-shadow: 0 10px 30px -10px rgba(46, 126, 255, 0.3);
+        }
+        .role-toggle-container {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        .dark .role-toggle-container {
+            background: rgba(255, 255, 255, 0.05);
+        }#driver-toggle:checked ~ .content-passenger { display: none; }
+        #driver-toggle:checked ~ .content-driver { display: flex; }
+        #passenger-toggle:checked ~ .content-passenger { display: flex; }
+        #passenger-toggle:checked ~ .content-driver { display: none; }#passenger-toggle:checked ~ .role-switch-bg { transform: translateX(0%); }
+        #driver-toggle:checked ~ .role-switch-bg { transform: translateX(100%); }#driver-toggle:checked ~ * .theme-text { color: #a855f7; }
+        #driver-toggle:checked ~ * .theme-bg { background-color: #a855f7; }
+        #driver-toggle:checked ~ * .theme-border { border-color: rgba(168, 85, 247, 0.3); }
+        #driver-toggle:checked ~ * .role-switch-bg { background: var(--driver-gradient); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen flex flex-col font-display transition-colors duration-500">
+<div class="relative flex h-full min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden max-w-md mx-auto">
+<div class="pt-12 px-6 flex justify-center w-full z-20">
+<div class="relative role-toggle-container w-full max-w-[280px] h-12 rounded-full p-1 flex items-center border border-slate-200 dark:border-white/10">
+<input checked="" class="hidden" id="passenger-toggle" name="role" type="radio"/>
+<input class="hidden" id="driver-toggle" name="role" type="radio"/>
+<div class="role-switch-bg absolute left-1 top-1 w-[calc(50%-4px)] h-10 rounded-full bg-[var(--accent-gradient)] shadow-lg transition-all duration-300 ease-in-out z-0"></div>
+<label class="flex-1 text-center text-sm font-bold z-10 cursor-pointer transition-colors duration-300" for="passenger-toggle">
+                Passenger
+            </label>
+<label class="flex-1 text-center text-sm font-bold z-10 cursor-pointer transition-colors duration-300" for="driver-toggle">
+                Driver
+            </label>
+</div>
+</div>
+<div class="relative w-full h-56 flex flex-col items-center justify-center px-6 overflow-hidden">
+<div class="absolute top-[-10%] left-[-10%] w-64 h-64 theme-bg opacity-10 rounded-full blur-3xl"></div>
+<div class="z-10 text-center">
+<div class="inline-flex items-center justify-center p-4 theme-bg/10 rounded-full mb-4 ring-1 theme-border">
+<span class="material-symbols-outlined theme-text text-4xl">commute</span>
+</div>
+<h1 class="text-3xl font-bold tracking-tight mb-1">GoTogether</h1>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">College-exclusive ride sharing</p>
+</div>
+</div>
+<div class="flex-1 px-6 pb-12 flex flex-col gap-6">
+<div class="flex flex-col gap-4">
+<div class="relative">
+<label class="block text-sm font-semibold mb-2 ml-4 text-slate-600 dark:text-slate-300">College Email</label>
+<div class="relative">
+<input class="w-full h-14 px-6 rounded-full bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all outline-none text-base" placeholder="name@university.edu" type="email"/>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 theme-bg p-2 rounded-full cursor-pointer hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-white text-xl">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<div class="content-driver hidden flex-col gap-4">
+<div class="glass-effect rounded-2xl p-5 border-l-4 border-electric-purple bg-purple-500/5">
+<div class="flex items-start gap-4">
+<div class="p-2 bg-electric-purple/20 rounded-lg">
+<span class="material-symbols-outlined text-electric-purple">directions_car</span>
+</div>
+<div>
+<h4 class="font-bold text-sm text-electric-purple">Vehicle Verification Required</h4>
+<p class="text-xs text-slate-500 dark:text-slate-400 mt-1">To start driving, you'll need to upload your registration and insurance documents.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4">
+<div class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
+<span class="text-xs font-bold text-slate-400 uppercase tracking-widest">or</span>
+<div class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 h-14 px-4 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all font-semibold">
+<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaALXrlnrlnBTM5sDYaOjxk74KbI7U3cHcESCQusX0sB95NOXFHYE37dswGXOXVux7sTOs3Xk18Rkx5mhDpfp9xHXkTK1y-cIOwD48-j2YeETMmjpG34s8vruowDH2BkFUGy2wFtsTX4rxVv80l4MQgruKgt17RKwDs_6qIQ6jyPEU6b4iJkTDbne-lGRpDRIGIA9lThdNrHUNDoCPssu6LeCdrT3aZsLQdADQmlooMAfJm1YjffbcY2MPh11fQD9QmXPXjyqx4E4"/>
+<span class="text-sm">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 h-14 px-4 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all font-semibold">
+<span class="material-symbols-outlined theme-text text-xl">smartphone</span>
+<span class="text-sm">Phone OTP</span>
+</button>
+</div>
+<div class="mt-2">
+<div class="glass-effect rounded-2xl p-5 relative overflow-hidden group cursor-pointer border theme-border">
+<div class="flex items-center gap-4 relative z-10">
+<div class="size-12 rounded-full theme-bg flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white text-xl">id_card</span>
+</div>
+<div class="flex-1">
+<h3 class="font-bold text-base leading-tight">Scan Student ID</h3>
+<p class="text-xs text-slate-500 dark:text-slate-400">Verified campus access only</p>
+</div>
+<span class="material-symbols-outlined theme-text opacity-40 group-hover:opacity-100 transition-opacity">qr_code_scanner</span>
+</div>
+<div class="absolute -top-10 -right-10 w-24 h-24 theme-bg opacity-5 rounded-full blur-2xl group-hover:opacity-10 transition-opacity"></div>
+</div>
+</div>
+<div class="mt-auto pt-6 text-center px-4">
+<p class="text-[10px] text-slate-500 dark:text-slate-500 leading-relaxed uppercase tracking-wider font-semibold">
+                Premium College Rideshare Network
+            </p>
+<div class="mt-2 flex justify-center gap-4 text-xs">
+<a class="theme-text hover:underline" href="#">Terms</a>
+<span class="text-slate-300 dark:text-slate-700">•</span>
+<a class="theme-text hover:underline" href="#">Privacy</a>
+</div>
+</div>
+</div>
+<div class="h-8 w-full"></div>
+</div>
+<style type="text/tailwindcss">#passenger-toggle:checked ~ * .theme-text { @apply text-primary; }
+    #passenger-toggle:checked ~ * .theme-bg { @apply bg-primary; }
+    #passenger-toggle:checked ~ * .theme-border { @apply border-primary/30; }
+    #passenger-toggle:checked ~ * .content-passenger { @apply flex; }
+    #passenger-toggle:checked ~ * .content-driver { @apply hidden; }
+    #driver-toggle:checked ~ * .theme-text { @apply text-electric-purple; }
+    #driver-toggle:checked ~ * .theme-bg { @apply bg-electric-purple; }
+    #driver-toggle:checked ~ * .theme-border { @apply border-electric-purple/30; }
+    #driver-toggle:checked ~ * .content-passenger { @apply flex; }#driver-toggle:checked ~ * .content-driver { @apply flex; }</style>
+
+</body></html>

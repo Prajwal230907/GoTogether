@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GoTogether - Driver Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#7f13ec",
+                        "background-light": "#f7f6f8",
+                        "background-dark": "#191022",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Public Sans', sans-serif; }
+        .glow-purple {
+            box-shadow: 0 0 20px 2px rgba(127, 19, 236, 0.3);
+        }
+        .hot-zone-pulse {
+            background: radial-gradient(circle, rgba(127,19,236,0.4) 0%, rgba(127,19,236,0) 70%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col overflow-x-hidden">
+<!-- Header / Top Bar -->
+<header class="flex items-center justify-between px-6 pt-12 pb-4 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<div class="size-10 rounded-full border-2 border-primary/30 overflow-hidden bg-primary/10 flex items-center justify-center">
+<img alt="Driver Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling male driver" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEqYPvSQ3TK57gc2iVcfj_cojPmVr81kL8pOFxIYEWVFwpdnDDusXf-vOap2_By_J6txZ09ECH3dcjyNKFbNxbLnkiqo21d9yy8dUtmSlJKIizZrwXvrkwKzX8YeYoKbX1114REl33MVhrUXwLYwnH65PSmuaix5xOncB_RtOOEKpF0WITHalBKzsfaf4ECZZWfssdh_oQqeocdyMvUL7nTVxO_1hOrttPRDhN3q-eAJCmGudjZXNgbHj8AgD_A_jYqi1hDqcqKRQ"/>
+</div>
+<div>
+<p class="text-xs text-slate-500 dark:text-slate-400 font-medium">Welcome back,</p>
+<h1 class="text-lg font-bold leading-none">Alex Rivera</h1>
+</div>
+</div>
+<button class="relative p-2 rounded-full bg-slate-200 dark:bg-primary/10 text-slate-700 dark:text-primary">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-background-dark"></span>
+</button>
+</header>
+<!-- Status Section -->
+<section class="px-6 py-4">
+<div class="bg-white dark:bg-primary/5 border border-slate-200 dark:border-primary/20 rounded-xl p-5 glow-purple">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="text-xl font-bold tracking-tight">Go Online</h2>
+<p class="text-sm text-slate-500 dark:text-slate-400">Ready to pick up students?</p>
+</div>
+<label class="relative flex h-[34px] w-[60px] cursor-pointer items-center rounded-full border-none bg-slate-300 dark:bg-primary/20 p-1 transition-colors has-[:checked]:bg-primary">
+<div class="h-full aspect-square rounded-full bg-white shadow-lg transition-transform translate-x-0 peer-checked:translate-x-[26px]"></div>
+<input checked="" class="invisible absolute peer" type="checkbox"/>
+</label>
+</div>
+</div>
+</section>
+<!-- Quick Stats -->
+<section class="flex gap-4 px-6 py-2 overflow-x-auto no-scrollbar">
+<div class="flex-1 min-w-[120px] bg-white dark:bg-slate-800/40 p-4 rounded-xl border border-slate-200 dark:border-slate-700/50">
+<span class="material-symbols-outlined text-primary mb-2">schedule</span>
+<p class="text-xs text-slate-500 dark:text-slate-400">Hours</p>
+<p class="text-lg font-bold">4.2h</p>
+</div>
+<div class="flex-1 min-w-[120px] bg-white dark:bg-slate-800/40 p-4 rounded-xl border border-slate-200 dark:border-slate-700/50">
+<span class="material-symbols-outlined text-primary mb-2">payments</span>
+<p class="text-xs text-slate-500 dark:text-slate-400">Earnings</p>
+<p class="text-lg font-bold">$84.50</p>
+</div>
+<div class="flex-1 min-w-[120px] bg-white dark:bg-slate-800/40 p-4 rounded-xl border border-slate-200 dark:border-slate-700/50">
+<span class="material-symbols-outlined text-primary mb-2">stars</span>
+<p class="text-xs text-slate-500 dark:text-slate-400">Rating</p>
+<p class="text-lg font-bold">4.9</p>
+</div>
+</section>
+<!-- Map Section -->
+<section class="px-6 py-6 flex-grow flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<h3 class="text-lg font-bold">Hot Zones Near You</h3>
+<span class="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wider">High Demand</span>
+</div>
+<div class="relative w-full flex-grow min-h-[300px] rounded-xl overflow-hidden border border-slate-200 dark:border-primary/20 shadow-xl">
+<!-- Mock Map Background -->
+<div class="absolute inset-0 bg-slate-300 dark:bg-slate-900 overflow-hidden">
+<img alt="City Map" class="w-full h-full object-cover opacity-60 grayscale dark:grayscale-0 dark:brightness-50" data-alt="Dark stylized city map with purple glowing hotspots" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpGXc_wrWPq5nyoYlOxMXUsidrgYq4akJNuVsCe49MH_Xex2w-j9gu8rd-k0w78pQCUkEE6wzT-kCFj861tcIxeYQrToo5Ly-1rS3otgkodLPzETtyrB4Z79hzBFTlaDzafOpI0i0Xz1ivrgJBiJdn37WFT_Ft-8ObCyJZBe68T7gAqo32KSKlaJQTUSly9Pd6MurIXeVhBLSBZB5kFgGUT7klwhk1wIdmFp-p79T_BDwFpsa51JG2YN8Ztqc5te-8MmEjRNVSkpA"/>
+<!-- Overlay Heatmaps -->
+<div class="absolute top-1/4 left-1/3 size-32 hot-zone-pulse rounded-full"></div>
+<div class="absolute bottom-1/3 right-1/4 size-48 hot-zone-pulse rounded-full"></div>
+<!-- Driver Marker -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+<div class="size-8 bg-primary rounded-full border-4 border-white dark:border-background-dark shadow-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm">navigation</span>
+</div>
+<div class="mt-1 bg-white dark:bg-background-dark px-2 py-0.5 rounded shadow text-[10px] font-bold text-center">YOU</div>
+</div>
+<!-- Floating Map Controls -->
+<div class="absolute right-4 top-4 flex flex-col gap-2">
+<button class="size-10 rounded-full bg-white dark:bg-background-dark shadow-lg flex items-center justify-center text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined">layers</span>
+</button>
+<button class="size-10 rounded-full bg-white dark:bg-background-dark shadow-lg flex items-center justify-center text-slate-700 dark:text-slate-300">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+</div>
+<!-- Bottom Sheet Peek -->
+<div class="absolute bottom-0 inset-x-0 bg-white dark:bg-background-dark/95 backdrop-blur-md p-4 border-t border-slate-200 dark:border-slate-800">
+<div class="w-12 h-1 bg-slate-300 dark:bg-slate-700 rounded-full mx-auto mb-4"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="size-10 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">school</span>
+</div>
+<div>
+<p class="font-bold text-sm">North Campus Hub</p>
+<p class="text-xs text-slate-500">12 students waiting • 0.5 miles away</p>
+</div>
+</div>
+<button class="bg-primary text-white text-xs font-bold px-4 py-2 rounded-full">Navigate</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Spacer for Nav Bar -->
+<div class="h-24"></div>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-6 inset-x-6 z-50">
+<div class="flex items-center justify-around bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-slate-200 dark:border-slate-800 rounded-full px-4 py-3 shadow-2xl">
+<a class="flex flex-col items-center gap-0.5 group" href="#">
+<div class="p-2 rounded-full bg-primary/10 text-primary">
+<span class="material-symbols-outlined transition-all fill-1">dashboard</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-primary">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-slate-400 group" href="#">
+<div class="p-2 rounded-full transition-all group-hover:bg-slate-100 dark:group-hover:bg-slate-800">
+<span class="material-symbols-outlined">hail</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider">Requests</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-slate-400 group" href="#">
+<div class="p-2 rounded-full transition-all group-hover:bg-slate-100 dark:group-hover:bg-slate-800">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider">Earnings</span>
+</a>
+<a class="flex flex-col items-center gap-0.5 text-slate-400 group" href="#">
+<div class="p-2 rounded-full transition-all group-hover:bg-slate-100 dark:group-hover:bg-slate-800">
+<span class="material-symbols-outlined">person</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-wider">Profile</span>
+</a>
+</div>
+</nav>
+</body></html>

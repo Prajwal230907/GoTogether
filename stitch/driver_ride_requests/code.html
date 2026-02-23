@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Driver Ride Requests</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f20d0d",
+                        "background-light": "#f8f5f5",
+                        "background-dark": "#120808",
+                        "accept-green": "#22c55e",
+                        "decline-red": "#ef4444",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display min-h-screen flex flex-col">
+<!-- Header Section -->
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 pt-12 pb-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="size-3 bg-accept-green rounded-full animate-pulse"></div>
+<h1 class="text-xl font-bold tracking-tight">Active Requests</h1>
+</div>
+<button class="size-10 flex items-center justify-center rounded-full bg-slate-200 dark:bg-primary/20 text-slate-900 dark:text-primary">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm">You are currently online and accepting rides</p>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 p-4 space-y-6">
+<!-- Active Request Card (Operational Focus) -->
+<div class="relative overflow-hidden bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-primary/10 rounded-xl shadow-2xl p-5">
+<!-- Countdown Progress Bar -->
+<div class="absolute top-0 left-0 h-1.5 bg-primary/20 w-full">
+<div class="h-full bg-primary w-2/3"></div>
+</div>
+<div class="flex justify-between items-start mb-6 pt-2">
+<div>
+<span class="text-xs font-bold uppercase tracking-widest text-primary mb-1 block">Urgent Pickup</span>
+<h2 class="text-3xl font-black text-slate-900 dark:text-white">$18.25</h2>
+<p class="text-slate-500 dark:text-slate-400 text-sm font-medium">Est. Total Earning</p>
+</div>
+<div class="bg-primary/10 dark:bg-primary/20 px-3 py-1 rounded-full">
+<p class="text-primary text-xs font-bold">12s left</p>
+</div>
+</div>
+<!-- Route Details -->
+<div class="grid grid-cols-[32px_1fr] gap-x-3 mb-6">
+<div class="flex flex-col items-center py-1">
+<span class="material-symbols-outlined text-primary text-lg">radio_button_checked</span>
+<div class="w-0.5 h-10 bg-slate-300 dark:bg-slate-700 my-1 border-dashed border-l"></div>
+<span class="material-symbols-outlined text-slate-400 text-lg">location_on</span>
+</div>
+<div class="space-y-4">
+<div>
+<p class="text-xs text-slate-500 dark:text-slate-400 uppercase font-bold tracking-tighter">Pickup (1.4 mi)</p>
+<p class="text-base font-semibold text-slate-900 dark:text-slate-100">888 Market St, Financial District</p>
+</div>
+<div>
+<p class="text-xs text-slate-500 dark:text-slate-400 uppercase font-bold tracking-tighter">Drop-off (5.2 mi)</p>
+<p class="text-base font-semibold text-slate-900 dark:text-slate-100">Presidio Heights Terminal</p>
+</div>
+</div>
+</div>
+<!-- Passenger Context -->
+<div class="flex items-center justify-between p-4 bg-slate-50 dark:bg-background-dark/50 rounded-lg mb-8">
+<div class="flex items-center gap-3">
+<div class="size-12 rounded-full overflow-hidden bg-slate-200">
+<img class="w-full h-full object-cover" data-alt="Passenger profile photo of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvKK2q1SEXTzMdJujvIK_w_zyalsIcXLVqJVrJdrXWoGtXp9BIU5V1lC5cSc78PtOJcb177LVCa_UVWPWXwt9u34y0Peq0blOwnRXYd60Y1P-HrhsO1xVSFtbWv25tg3EyI9u68-3k-oTc-XDSHj3JSIiOOpMI-2BjE6KRaoBijMbh9RF6r9Vo3BxYTXrdikB8Zq-ZmX8Ar3KRZ0XD370c9a1yJS8xZTKVXnTZCcgpi-Q7YA7kP8biYSuIbW4uX7uQToWvdUwZScs"/>
+</div>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Sarah Jenkins</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500 text-xs" style="font-variation-settings: 'FILL' 1">star</span>
+<span class="text-xs font-bold text-slate-600 dark:text-slate-400">4.9 • 242 trips</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<p class="text-xs font-bold text-slate-500 uppercase">Duration</p>
+<p class="font-bold text-slate-900 dark:text-white">14 mins</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex gap-4">
+<button class="flex-1 h-16 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-xl font-bold text-lg flex items-center justify-center gap-2 hover:bg-slate-300 dark:hover:bg-slate-700 transition-colors">
+<span class="material-symbols-outlined">close</span>
+                    Decline
+                </button>
+<button class="flex-[2] h-16 bg-accept-green text-white rounded-xl font-bold text-lg flex items-center justify-center gap-2 shadow-lg shadow-accept-green/20 hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined">check_circle</span>
+                    Accept Ride
+                </button>
+</div>
+</div>
+<!-- Secondary Request Card (Muted) -->
+<div class="bg-white/50 dark:bg-slate-900/20 border border-slate-200 dark:border-slate-800 rounded-xl p-5 opacity-60">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="size-10 bg-slate-200 dark:bg-slate-800 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-slate-500">schedule</span>
+</div>
+<div>
+<p class="text-sm font-bold text-slate-900 dark:text-white">$12.50 Potential</p>
+<p class="text-xs text-slate-500">2.1 miles away • Pickup in 8 mins</p>
+</div>
+</div>
+<button class="text-primary text-sm font-bold uppercase tracking-tight">View</button>
+</div>
+</div>
+<!-- Map Snippet (Visualization) -->
+<div class="rounded-xl overflow-hidden h-48 relative border border-slate-200 dark:border-slate-800 shadow-sm">
+<div class="absolute inset-0 bg-slate-300 dark:bg-slate-800 flex items-center justify-center">
+<img class="w-full h-full object-cover grayscale brightness-50 contrast-125" data-alt="Dark themed street map of San Francisco showing a route" data-location="San Francisco" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6WuoMrRwItzDuGU4rkQilGhpmnAXS1KOIGVAuLZkN4vpqLW5lhWOfR-5zv2262A3otsk6uHs6nuNLdcV2dXj6o1lGJBLkrWAfR3uRlLwTjkXHbQLRAo12T5zmxqMkfGpDitHB2PvbJh6oCHBvZx_GzgwWN8YVNqjNnse5C6zn5TUc7dMuj_t-aIrmSkvW2q6qSDw3mYPA05wiHNzL1kEmN8WzxD8Ju-cYPwb8i6kGttdjREP1pYReptsIBqpz4nwaWdSxrI7ZzN8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent"></div>
+</div>
+<div class="absolute bottom-4 left-4 bg-white dark:bg-slate-900 px-3 py-1.5 rounded-full shadow-lg">
+<p class="text-xs font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-primary text-sm">navigation</span>
+                    Real-time traffic: Low
+                </p>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="bg-white dark:bg-background-dark border-t border-slate-200 dark:border-primary/20 px-6 py-4">
+<div class="flex justify-between items-center max-w-md mx-auto">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">notifications_active</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Requests</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Earnings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">star</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Rating</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter">Account</span>
+</a>
+</div>
+</nav>
+</body></html>

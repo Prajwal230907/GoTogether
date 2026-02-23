@@ -1,0 +1,28 @@
+Running Gradle task 'assembleDebug'...                              7.1s
+flutter : Gradle build 
+failed to produce an 
+.apk file. It's likely 
+that this file was 
+generated under D:\GoTo
+gether\gotogether\mobil
+e_flutter\build, but 
+the tool couldn't find 
+it.
+At line:1 char:1
++ flutter build apk 
+--debug > 
+build_err11.txt 2>&1; 
+Get-Content build_e ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (Gradle build    
+ fa...uldn't find i    
+t.:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 

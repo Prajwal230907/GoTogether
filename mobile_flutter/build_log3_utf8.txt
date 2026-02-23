@@ -1,0 +1,177 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : Warning: Flutter support 
+for your project's Android Gradle 
+Plugin version (Android Gradle 
+Plugin version 8.3.2) will soon be 
+dropped. Please upgrade your 
+Android Gradle Plugin version to a 
+version of at least Android Gradle 
+Plugin version 8.6.0 soon.
+At line:1 char:1
++ flutter build apk --debug 2>&1 | 
+Out-File -Encoding utf8 
+.\build_log3 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotS 
+   pecified: (Warning: Flutte...i  
+  on 8.6.0 soon.:String) [], Rem   
+ oteException
+    + FullyQualifiedErrorId : Nati 
+   veCommandError
+ 
+Alternatively, use the flag "--andr
+oid-skip-build-dependency-validatio
+n" to bypass this check.
+
+Potential fix: Your project's AGP 
+version is typically defined in 
+the plugins block of the 
+`settings.gradle` file (C:\GoTogeth
+er\gotogether\mobile_flutter\androi
+d/settings.gradle), by a plugin 
+with the id of 
+com.android.application. 
+If you don't see a plugins block, 
+your project was likely created 
+with an older template version. In 
+this case it is most likely 
+defined in the top-level 
+build.gradle file (C:\GoTogether\go
+together\mobile_flutter\android/bui
+ld.gradle) by the following line 
+in the dependencies block of the 
+buildscript: "classpath 'com.androi
+d.tools.build:gradle:<version>'".
+
+Warning: Flutter support for your 
+project's Kotlin version (1.9.24) 
+will soon be dropped. Please 
+upgrade your Kotlin version to a 
+version of at least 2.1.0 soon.
+Alternatively, use the flag "--andr
+oid-skip-build-dependency-validatio
+n" to bypass this check.
+
+Potential fix: Your project's KGP 
+version is typically defined in 
+the plugins block of the 
+`settings.gradle` file (C:\GoTogeth
+er\gotogether\mobile_flutter\androi
+d/settings.gradle), by a plugin 
+with the id of 
+org.jetbrains.kotlin.android. 
+If you don't see a plugins block, 
+your project was likely created 
+with an older template version, in 
+which case it is most likely 
+defined in the top-level 
+build.gradle file (C:\GoTogether\go
+together\mobile_flutter\android/bui
+ld.gradle) by the 
+ext.kotlin_version property.
+
+e: file:///C:/Users/Prajwal/AppData
+/Local/Pub/Cache/hosted/pub.dev/flu
+ttertoast-8.2.8/android/src/main/ko
+tlin/io/github/ponnamkarthik/toast/
+fluttertoast/FlutterToastPlugin.kt:
+9:48 Unresolved reference: 
+Registrar
+e: file:///C:/Users/Prajwal/AppData
+/Local/Pub/Cache/hosted/pub.dev/flu
+ttertoast-8.2.8/android/src/main/ko
+tlin/io/github/ponnamkarthik/toast/
+fluttertoast/MethodCallHandlerImpl.
+kt:18:24 Unresolved reference: 
+FlutterMain
+e: file:///C:/Users/Prajwal/AppData
+/Local/Pub/Cache/hosted/pub.dev/flu
+ttertoast-8.2.8/android/src/main/ko
+tlin/io/github/ponnamkarthik/toast/
+fluttertoast/MethodCallHandlerImpl.
+kt:74:35 Unresolved reference: 
+FlutterMain
+e: file:///C:/Users/Prajwal/AppData
+/Local/Pub/Cache/hosted/pub.dev/flu
+ttertoast-8.2.8/android/src/main/ko
+tlin/io/github/ponnamkarthik/toast/
+fluttertoast/MethodCallHandlerImpl.
+kt:90:39 Unresolved reference: 
+FlutterMain
+
+FAILURE: Build completed with 2 
+failures.
+
+1: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task 
+':fluttertoast:compileDebugKotlin'.
+> A failure occurred while 
+executing org.jetbrains.kotlin.comp
+ilerRunner.GradleCompilerRunnerWith
+Workers$GradleKotlinCompilerWorkAct
+ion
+   > Compilation error. See log 
+for more details
+
+* Try:
+> Run with --stacktrace option to 
+get the stack trace.
+> Run with --info or --debug 
+option to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+===================================
+===================================
+========
+
+2: Task failed with an exception.
+-----------
+* What went wrong:
+Execution failed for task 
+':app:checkDebugDuplicateClasses'.
+> Could not resolve all files for 
+configuration 
+':app:debugRuntimeClasspath'.
+   > Failed to transform armeabi_v7
+a_debug-1.0.0-13e658725ddaa27060142
+6d1485636157e38c34c.jar (io.flutter
+:armeabi_v7a_debug:1.0.0-13e658725d
+daa270601426d1485636157e38c34c) to 
+match attributes {artifactType=enum
+erated-runtime-classes, 
+org.gradle.category=library, 
+org.gradle.libraryelements=jar, 
+org.gradle.status=release, 
+org.gradle.usage=java-runtime}.
+      > Execution failed for 
+JetifyTransform: C:\Users\Prajwal\.
+gradle\caches\modules-2\files-2.1\i
+o.flutter\armeabi_v7a_debug\1.0.0-1
+3e658725ddaa270601426d1485636157e38
+c34c\2361e839232a02953b18f0ca62e814
+ff9311a675\armeabi_v7a_debug-1.0.0-
+13e658725ddaa270601426d1485636157e3
+8c34c.jar.
+         > Java heap space
+
+* Try:
+> Run with --stacktrace option to 
+get the stack trace.
+> Run with --info or --debug 
+option to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+===================================
+===================================
+========
+
+BUILD FAILED in 16s
+Running Gradle task 'assembleDebug'...                             17.6s
+Gradle task assembleDebug failed 
+with exit code 1

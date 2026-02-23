@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
+import 'package:google_fonts/google_fonts.dart';
+
 class AppTheme {
   
   static ThemeData light() {
@@ -116,12 +118,14 @@ class AppTheme {
         hintStyle: TextStyle(color: colorScheme.onSurfaceVariant),
       ),
       
-      textTheme: TextTheme(
-        bodyLarge: TextStyle(color: colorScheme.onSurface),
-        bodyMedium: TextStyle(color: colorScheme.onSurface),
-        titleLarge: TextStyle(color: colorScheme.onSurface, fontWeight: FontWeight.bold),
-        titleMedium: TextStyle(color: colorScheme.onSurface, fontWeight: FontWeight.bold),
-        labelLarge: TextStyle(color: colorScheme.onPrimary, fontWeight: FontWeight.bold), 
+      textTheme: GoogleFonts.plusJakartaSansTextTheme(
+        TextTheme(
+          bodyLarge: TextStyle(color: colorScheme.onSurface),
+          bodyMedium: TextStyle(color: colorScheme.onSurface),
+          titleLarge: TextStyle(color: colorScheme.onSurface, fontWeight: FontWeight.bold),
+          titleMedium: TextStyle(color: colorScheme.onSurface, fontWeight: FontWeight.bold),
+          labelLarge: TextStyle(color: colorScheme.onPrimary, fontWeight: FontWeight.bold), 
+        ),
       ),
 
       bottomSheetTheme: BottomSheetThemeData(
